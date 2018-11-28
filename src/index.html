@@ -1,8 +1,18 @@
 <html>
 <head>
     <script src="scripts/plugins/jquery-3.3.1.js"></script>
+    <script src="scripts/index.js"></script>
 </head>
 <body>
-Hello world!
+<h2>Autocomplete</h2>
+Start typing:
+<br />
+<br />
+<form autocomplete="off" id="searchForm" action="http://localhost:8080/getCountries">
+    <div class="autocomplete" style="width:300px;">
+        <input id="countryInput" type="text" name="search">
+    </div>
+    <input type="submit">
+</form>
 </body>
 </html>
