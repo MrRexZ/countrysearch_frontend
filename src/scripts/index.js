@@ -1,6 +1,8 @@
+
+
 $(document).ready(function(){
     $("#countryInput").keyup(function(e){
-        var url = "http://localhost:8080/getCountries";
+        var url = "http://localhost:48042/getCountries";
         var country = $(this).val()
         $.ajax({
             type: "GET",
