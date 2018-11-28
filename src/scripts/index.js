@@ -1,15 +1,16 @@
 $(document).ready(function(){
-    $("#searchForm").submit(function(e){
-        var form = $(this);
-        var url = form.attr('action');
+    $("#countryInput").keyup(function(e){
+        var url = "http://localhost:8080/getCountries";
+        var country = $(this).val()
         $.ajax({
             type: "GET",
             url: url,
             dataType: 'json',
-            data: form.serialize(),
+            data: {
+              "search": country
+            },
             success: function(data)
             {
-                console.log(data);
                 provideAutocomplete($("#countryInput"), data);
             },
             error: function(xhr, status, error)
